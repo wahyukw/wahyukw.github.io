@@ -1,0 +1,28 @@
+@import '../abstracts/variables';
+@import '../mixins/mixin';
+
+.portfolio-page{
+    @include new-page;
+    margin-bottom: 100px;
+    .section-header{
+        @include header;
+        margin-bottom: 60px;
+    }
+
+    .portfolio-box{
+        text-align: center;
+        display: inline-block;
+        width: 33%;
+
+        img{
+            max-width: 70%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+            
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

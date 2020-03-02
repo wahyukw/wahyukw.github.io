@@ -1,0 +1,82 @@
+@import '../mixins/mixin';
+
+.header-page{
+    height: 100vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.8)),
+    url(../assets/test.jpg);
+    @include parallax;
+    nav{
+        text-align: right;
+        ul{
+            @include navbar;
+            padding: 50px 140px;
+            position: fixed;
+            li{
+                display: inline-block;
+                position: relative;
+                .underline{
+                    color: $color-white;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    padding: 0 20px;
+
+                    position: relative;
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 3px;
+                        display: block;
+                        margin-top: 5px;
+                        right: 50%;
+                        transform: translate(50%);
+                        background: $color-primary;
+                        transition: width .3s ease;
+                        -webkit-transition: width .3s ease;
+                    }
+
+                    &:hover::after{
+                        width: 50%;
+                        left: 50%;
+                        background: $color-primary;
+                        transform: translate(-50%);
+                    }
+                }
+            }
+        }
+    }
+
+    .introduction{
+        color: $color-white;
+        font-weight: 700;
+        text-transform: uppercase;
+        position: absolute;
+        top: 40%;
+        margin-left: 140px;
+
+        a{
+            text-decoration: none;
+        }
+        h6{
+            color: $color-secondary;
+            font-size: 1rem;
+        }
+
+        h3{
+            font-size: 1.25rem;
+           
+            span{
+                color: $color-primary;
+            }
+        }
+        
+        h2{
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@mixin new-page{
+    padding-top: 100px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+@mixin header{
+    text-align: center;
+        margin-bottom: 30px;
+        h2{
+            font-size: 1.5rem;
+            color: $color-black;
+            text-transform: uppercase;
+        }
+}
+
+@mixin parallax {
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin navbar{
+    width: 100%;
+    list-style: none;
+}
+
+@mixin social{
+    .fab{
+        font-size: 1.5rem;
+    }
+    .fa-instagram{
+        background: #d6249f;
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .fa-linkedin{
+        color: #00a0dc
+    }
+    .fa-github{
+        color: #333
+    }
+    .fa-facebook{
+        color: #3b5998;
+    }
+}
+
+// MEDIA QUERY MANAGER
+/*
+0-600PX: Phone
+600-900px: Tablet Portrait
+900-1200px: Tablet Landscape
+[1200-1800]: Desktop (Normal Styles)
+1800px +: Big Desktop
+*/
