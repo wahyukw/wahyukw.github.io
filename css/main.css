@@ -19,11 +19,11 @@ body {
 .btn {
   font-weight: 400;
   display: inline-block;
-  margin-right: 10px; }
+  margin-right: 0.625rem; }
   .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 30px;
+    padding: .9375rem 1.875rem;
     border-radius: 100px;
     transition: all .2s; }
   .btn:hover {
@@ -45,7 +45,7 @@ body {
     color: #000; }
 
 hr {
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
@@ -56,6 +56,15 @@ hr {
 900-1200px: Tablet Landscape
 [1200-1800]: Desktop (Normal Styles)
 1800px +: Big Desktop
+
+$breakpoint arg choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
 */
 .header-page {
   height: 100vh;
@@ -70,7 +79,7 @@ hr {
     .header-page nav ul {
       width: 100%;
       list-style: none;
-      padding: 50px 140px;
+      padding: 3.125rem 8.75rem;
       position: fixed; }
       .header-page nav ul li {
         display: inline-block;
@@ -79,7 +88,7 @@ hr {
           color: #fff;
           text-decoration: none;
           text-transform: uppercase;
-          padding: 0 20px;
+          padding: 0 1.25rem;
           position: relative; }
           .header-page nav ul li .underline::after {
             content: "";
@@ -104,7 +113,7 @@ hr {
     text-transform: uppercase;
     position: absolute;
     top: 40%;
-    margin-left: 140px; }
+    margin-left: 8.75rem; }
     .header-page .introduction a {
       text-decoration: none; }
     .header-page .introduction h6 {
@@ -116,7 +125,7 @@ hr {
         color: #3E8CE6; }
     .header-page .introduction h2 {
       font-size: 2rem;
-      margin-bottom: 30px; }
+      margin-bottom: 1.875rem; }
 
 /*
 0-600PX: Phone
@@ -124,14 +133,23 @@ hr {
 900-1200px: Tablet Landscape
 [1200-1800]: Desktop (Normal Styles)
 1800px +: Big Desktop
+
+$breakpoint arg choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
 */
 .about-page {
-  padding-top: 100px;
+  padding-top: 6.25rem;
   width: 80%;
   margin: 0 auto; }
   .about-page .section-header {
     text-align: center;
-    margin-bottom: 30px; }
+    margin-bottom: 1.875rem; }
     .about-page .section-header h2 {
       font-size: 1.5rem;
       color: #000;
@@ -141,12 +159,12 @@ hr {
     width: 40%;
     text-align: center; }
     .about-page .about-box img {
-      width: 300px;
-      height: 300px;
+      width: 18.75rem;
+      height: 18.75rem;
       border-radius: 50%; }
     .about-page .about-box p {
       text-align: left;
-      margin-bottom: 10px; }
+      margin-bottom: 0.625rem; }
       .about-page .about-box p span {
         color: #3E8CE6;
         font-weight: 700; }
@@ -157,16 +175,25 @@ hr {
 900-1200px: Tablet Landscape
 [1200-1800]: Desktop (Normal Styles)
 1800px +: Big Desktop
+
+$breakpoint arg choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
 */
 .portfolio-page {
-  padding-top: 100px;
+  padding-top: 6.25rem;
   width: 80%;
   margin: 0 auto;
-  margin-bottom: 100px; }
+  margin-bottom: 6.25rem; }
   .portfolio-page .section-header {
     text-align: center;
-    margin-bottom: 30px;
-    margin-bottom: 60px; }
+    margin-bottom: 1.875rem;
+    margin-bottom: 3.75rem; }
     .portfolio-page .section-header h2 {
       font-size: 1.5rem;
       color: #000;
@@ -189,9 +216,18 @@ hr {
 900-1200px: Tablet Landscape
 [1200-1800]: Desktop (Normal Styles)
 1800px +: Big Desktop
+
+$breakpoint arg choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
 */
 .contact-page {
-  padding-top: 100px;
+  padding-top: 6.25rem;
   width: 80%;
   margin: 0 auto;
   width: 100%;
@@ -204,7 +240,7 @@ hr {
   background-repeat: no-repeat; }
   .contact-page .section-header {
     text-align: center;
-    margin-bottom: 30px; }
+    margin-bottom: 1.875rem; }
     .contact-page .section-header h2 {
       font-size: 1.5rem;
       color: #000;
@@ -212,7 +248,7 @@ hr {
     .contact-page .section-header h2 {
       color: #fff; }
   .contact-page .contact-box {
-    padding: 135px 0;
+    padding: 8.4375rem 0;
     width: 33%;
     display: inline-block;
     color: #fff;
@@ -221,7 +257,7 @@ hr {
       font-size: 2rem;
       color: #E8E800; }
     .contact-page .contact-box h5 {
-      padding-top: 40px;
+      padding-top: 2.5rem;
       font-size: 1.25rem; }
 
 /*
@@ -230,15 +266,24 @@ hr {
 900-1200px: Tablet Landscape
 [1200-1800]: Desktop (Normal Styles)
 1800px +: Big Desktop
+
+$breakpoint arg choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
 */
 .footer {
-  padding-top: 100px;
+  padding-top: 6.25rem;
   width: 80%;
   margin: 0 auto;
-  margin-bottom: 30px; }
+  margin-bottom: 1.875rem; }
   .footer span {
     display: inline-block;
-    margin-right: 50px; }
+    margin-right: 3.125rem; }
   .footer nav {
     text-align: right;
     display: inline-block;
@@ -249,7 +294,7 @@ hr {
       .footer nav ul li {
         display: inline-block;
         position: relative;
-        padding: 0 10px; }
+        padding: 0 .625rem; }
         .footer nav ul li a {
           text-decoration: none; }
           .footer nav ul li a .fab {

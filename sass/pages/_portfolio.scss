@@ -3,10 +3,10 @@
 
 .portfolio-page{
     @include new-page;
-    margin-bottom: 100px;
+    margin-bottom: 6.25rem;
     .section-header{
         @include header;
-        margin-bottom: 60px;
+        margin-bottom: 3.75rem;
     }
 
     .portfolio-box{
