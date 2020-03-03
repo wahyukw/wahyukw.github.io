@@ -6,7 +6,8 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 16px; }
+  font-size: 16px;
+  scroll-behavior: smooth; }
 
 body {
   box-sizing: border-box; }
@@ -16,6 +17,22 @@ body {
   font-weight: 400;
   line-height: 1.6; }
 
+/*
+0-600PX: Phone
+600-900px: Tablet Portrait
+900-1200px: Tablet Landscape
+[1200-1800]: Desktop (Normal Styles)
+1800px +: Big Desktop
+
+$breakpoint arg choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+*/
 .btn {
   font-weight: 400;
   display: inline-block;
@@ -26,12 +43,25 @@ body {
     padding: .9375rem 1.875rem;
     border-radius: 100px;
     transition: all .2s; }
+    @media (max-width: 75em) {
+      .btn:link, .btn:visited {
+        padding: .8rem 2rem; } }
+    @media (max-width: 56.25em) {
+      .btn:link, .btn:visited {
+        padding: .5rem 1.5rem; } }
+    @media (max-width: 37.5em) {
+      .btn:link, .btn:visited {
+        padding: .5rem 1rem;
+        font-size: .75rem; } }
   .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); }
   .btn:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2); }
+  @media (max-width: 75em) {
+    .btn {
+      font-size: .8rem; } }
 
 .btn-white {
   background-color: #fff;
@@ -66,7 +96,7 @@ $breakpoint arg choices:
 1em = 16px
 
 */
-.header-page {
+.landing-page {
   height: 100vh;
   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../assets/test.jpg);
   background-size: cover;
@@ -74,23 +104,31 @@ $breakpoint arg choices:
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat; }
-  .header-page nav {
+  .landing-page nav {
     text-align: right; }
-    .header-page nav ul {
+    .landing-page nav .scrolled {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 1.875rem 8.75rem;
+      z-index: 100; }
+    .landing-page nav ul {
       width: 100%;
       list-style: none;
       padding: 3.125rem 8.75rem;
-      position: fixed; }
-      .header-page nav ul li {
+      position: fixed;
+      top: 0;
+      overflow: hidden;
+      transition: .3s ease;
+      z-index: 100; }
+      .landing-page nav ul li {
         display: inline-block;
         position: relative; }
-        .header-page nav ul li .underline {
+        .landing-page nav ul li .underline {
           color: #fff;
           text-decoration: none;
           text-transform: uppercase;
           padding: 0 1.25rem;
           position: relative; }
-          .header-page nav ul li .underline::after {
+          .landing-page nav ul li .underline::after {
             content: "";
             position: absolute;
             width: 0;
@@ -102,30 +140,71 @@ $breakpoint arg choices:
             background: #3E8CE6;
             transition: width .3s ease;
             -webkit-transition: width .3s ease; }
-          .header-page nav ul li .underline:hover::after {
+          .landing-page nav ul li .underline:hover::after {
             width: 50%;
             left: 50%;
             background: #3E8CE6;
             transform: translate(-50%); }
-  .header-page .introduction {
+      @media (max-width: 75em) {
+        .landing-page nav ul {
+          font-size: 0.8rem; } }
+      @media (max-width: 56.25em) {
+        .landing-page nav ul {
+          text-align: center; } }
+      @media (max-width: 37.5em) {
+        .landing-page nav ul {
+          display: none; } }
+  .landing-page .introduction {
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
     position: absolute;
     top: 40%;
-    margin-left: 8.75rem; }
-    .header-page .introduction a {
-      text-decoration: none; }
-    .header-page .introduction h6 {
+    margin-left: 8.75rem;
+    display: block;
+    width: 100%; }
+    .landing-page .introduction h6 {
       color: #E8E800;
       font-size: 1rem; }
-    .header-page .introduction h3 {
+      @media (max-width: 75em) {
+        .landing-page .introduction h6 {
+          font-size: .8rem; } }
+      @media (max-width: 56.25em) {
+        .landing-page .introduction h6 {
+          visibility: hidden; } }
+    .landing-page .introduction h3 {
       font-size: 1.25rem; }
-      .header-page .introduction h3 span {
+      .landing-page .introduction h3 span {
         color: #3E8CE6; }
-    .header-page .introduction h2 {
+      @media (max-width: 75em) {
+        .landing-page .introduction h3 {
+          font-size: 1rem; } }
+      @media (max-width: 37.5em) {
+        .landing-page .introduction h3 {
+          font-size: .75rem; } }
+    .landing-page .introduction h2 {
       font-size: 2rem;
       margin-bottom: 1.875rem; }
+      @media (max-width: 75em) {
+        .landing-page .introduction h2 {
+          font-size: 1.5rem; } }
+      @media (max-width: 37.5em) {
+        .landing-page .introduction h2 {
+          font-size: 1rem; } }
+    .landing-page .introduction a {
+      text-decoration: none; }
+    @media (max-width: 56.25em) {
+      .landing-page .introduction {
+        text-align: center;
+        margin: 0 auto; } }
+    @media (max-width: 37.5em) {
+      .landing-page .introduction {
+        display: block;
+        margin: auto;
+        position: relative; } }
+  @media (max-width: 37.5em) {
+    .landing-page {
+      height: 70vh; } }
 
 /*
 0-600PX: Phone
@@ -146,7 +225,8 @@ $breakpoint arg choices:
 .about-page {
   padding-top: 6.25rem;
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
   .about-page .section-header {
     text-align: center;
     margin-bottom: 1.875rem; }
@@ -154,6 +234,9 @@ $breakpoint arg choices:
       font-size: 1.5rem;
       color: #000;
       text-transform: uppercase; }
+    @media (max-width: 75em) {
+      .about-page .section-header h2 {
+        font-size: 1rem; } }
   .about-page .about-box {
     display: inline-block;
     width: 40%;
@@ -162,12 +245,36 @@ $breakpoint arg choices:
       width: 18.75rem;
       height: 18.75rem;
       border-radius: 50%; }
+      @media (max-width: 75em) {
+        .about-page .about-box img {
+          width: 15rem;
+          height: 15rem; } }
+      @media (max-width: 56.25em) {
+        .about-page .about-box img {
+          position: relative;
+          top: -2.5rem; } }
+      @media (max-width: 37.5em) {
+        .about-page .about-box img {
+          width: 10rem;
+          height: 10rem;
+          margin-top: 1.875rem; } }
     .about-page .about-box p {
       text-align: left;
       margin-bottom: 0.625rem; }
       .about-page .about-box p span {
         color: #3E8CE6;
         font-weight: 700; }
+      @media (max-width: 75em) {
+        .about-page .about-box p {
+          font-size: 0.75rem; } }
+    @media (max-width: 56.25em) {
+      .about-page .about-box {
+        margin-left: 3rem; } }
+    @media (max-width: 37.5em) {
+      .about-page .about-box {
+        width: 100%;
+        display: block;
+        margin-left: 0; } }
 
 /*
 0-600PX: Phone
@@ -198,17 +305,40 @@ $breakpoint arg choices:
       font-size: 1.5rem;
       color: #000;
       text-transform: uppercase; }
+    @media (max-width: 75em) {
+      .portfolio-page .section-header h2 {
+        font-size: 1rem; }
+      .portfolio-page .section-header p {
+        font-size: .75rem; } }
+    @media (max-width: 37.5em) {
+      .portfolio-page .section-header {
+        margin-bottom: 1.75rem; } }
   .portfolio-page .portfolio-box {
     text-align: center;
     display: inline-block;
-    width: 33%; }
+    width: 33%;
+    padding-bottom: 1.875rem; }
     .portfolio-page .portfolio-box img {
       max-width: 70%;
       height: auto;
       border-radius: 10px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
       .portfolio-page .portfolio-box img:hover {
-        cursor: pointer; }
+        cursor: pointer;
+        transform: translateY(-3px); }
+      .portfolio-page .portfolio-box img:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+      @media (max-width: 37.5em) {
+        .portfolio-page .portfolio-box img {
+          max-width: 50%; } }
+    @media (max-width: 56.25em) {
+      .portfolio-page .portfolio-box {
+        width: 30%; } }
+    @media (max-width: 37.5em) {
+      .portfolio-page .portfolio-box {
+        width: 100%;
+        display: block; } }
 
 /*
 0-600PX: Phone
@@ -231,7 +361,7 @@ $breakpoint arg choices:
   width: 80%;
   margin: 0 auto;
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../assets/test.jpg);
   background-size: cover;
   background-position: top;
@@ -247,8 +377,11 @@ $breakpoint arg choices:
       text-transform: uppercase; }
     .contact-page .section-header h2 {
       color: #fff; }
+      @media (max-width: 75em) {
+        .contact-page .section-header h2 {
+          font-size: 1rem; } }
   .contact-page .contact-box {
-    padding: 8.4375rem 0;
+    padding: 3.125rem 0;
     width: 33%;
     display: inline-block;
     color: #fff;
@@ -256,9 +389,24 @@ $breakpoint arg choices:
     .contact-page .contact-box .fas {
       font-size: 2rem;
       color: #E8E800; }
+      @media (max-width: 75em) {
+        .contact-page .contact-box .fas {
+          font-size: 1.5rem; } }
     .contact-page .contact-box h5 {
       padding-top: 2.5rem;
       font-size: 1.25rem; }
+      @media (max-width: 75em) {
+        .contact-page .contact-box h5 {
+          font-size: .9rem; } }
+    @media (max-width: 75em) {
+      .contact-page .contact-box {
+        padding: 5rem 0; }
+        .contact-page .contact-box p {
+          font-size: .75rem; } }
+    @media (max-width: 37.5em) {
+      .contact-page .contact-box {
+        padding: 5rem 0;
+        width: 32%; } }
 
 /*
 0-600PX: Phone
@@ -284,13 +432,24 @@ $breakpoint arg choices:
   .footer span {
     display: inline-block;
     margin-right: 3.125rem; }
+    @media (max-width: 75em) {
+      .footer span {
+        font-size: .75rem; } }
+    @media (max-width: 56.25em) {
+      .footer span {
+        margin-right: 0; } }
+    @media (max-width: 37.5em) {
+      .footer span {
+        display: block;
+        text-align: center; } }
   .footer nav {
     text-align: right;
     display: inline-block;
     width: 30%; }
     .footer nav ul {
       width: 100%;
-      list-style: none; }
+      list-style: none;
+      margin-left: 16rem; }
       .footer nav ul li {
         display: inline-block;
         position: relative;
@@ -310,3 +469,25 @@ $breakpoint arg choices:
             color: #333; }
           .footer nav ul li a .fa-facebook {
             color: #3b5998; }
+      @media (max-width: 75em) {
+        .footer nav ul {
+          margin-left: 0; } }
+      @media (max-width: 56.25em) {
+        .footer nav ul {
+          font-size: .75rem; } }
+      @media (max-width: 37.5em) {
+        .footer nav ul {
+          width: 200%;
+          margin: 0 auto; } }
+    @media (max-width: 37.5em) {
+      .footer nav {
+        display: block;
+        margin: 1rem 4rem; } }
+  @media (max-width: 56.25em) {
+    .footer {
+      width: 100%;
+      margin-left: 3rem; } }
+  @media (max-width: 37.5em) {
+    .footer {
+      width: 50%;
+      margin: 0 auto; } }

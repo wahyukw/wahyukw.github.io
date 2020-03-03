@@ -3,9 +3,22 @@
 .footer{
     @include new-page;
     margin-bottom: 1.875rem;
+
     span{
         display: inline-block;
         margin-right: 3.125rem;
+
+        @include respond(tab-land){
+            font-size: .75rem;
+        }
+
+        @include respond(tab-port){
+            margin-right: 0;
+        }
+        @include respond(phone){
+            display: block;
+            text-align: center;
+        }
     }
     nav{
         text-align: right;
@@ -13,6 +26,7 @@
         width: 30%;
         ul{
             @include navbar;
+            margin-left: 16rem;
             li{
                 display: inline-block;
                 position: relative;
@@ -22,7 +36,28 @@
                     @include social;
                 }
             }
+            @include respond(tab-land){
+                margin-left: 0;
+            }
+            @include respond(tab-port){
+                font-size: .75rem;
+            }
+            @include respond(phone){
+                width: 200%;
+                margin: 0 auto;
+            }
         }
-
+        @include respond(phone){
+            display: block;
+            margin: 1rem 4rem;
+        }
+    }
+    @include respond(tab-port){
+        width: 100%;
+        margin-left: 3rem;
+    }
+    @include respond(phone){
+        width: 50%;
+        margin: 0 auto;
     }
 }

@@ -1,6 +1,6 @@
 @import '../mixins/mixin';
 
-.header-page{
+.landing-page{
     height: 100vh;
     background-image: linear-gradient(
         to right bottom,
@@ -8,15 +8,27 @@
         rgba(0,0,0,0.8)),
     url(../assets/test.jpg);
     @include parallax;
+    
     nav{
         text-align: right;
+        
+        .scrolled{
+            background-color: rgba(0,0,0,0.8);
+            padding: 1.875rem 8.75rem;
+            z-index: 100;
+        }
         ul{
             @include navbar;
             padding: 3.125rem 8.75rem;
             position: fixed;
+            top: 0;
+            overflow: hidden;
+            transition: .3s ease;
+            z-index: 100;
             li{
                 display: inline-block;
                 position: relative;
+                
                 .underline{
                     color: $color-white;
                     text-decoration: none;
@@ -47,6 +59,15 @@
                     }
                 }
             }
+            @include respond(tab-land){
+                font-size: 0.8rem;
+            }
+            @include respond(tab-port){
+                text-align: center;
+            }
+            @include respond(phone){
+                display: none;
+            }
         }
     }
 
@@ -57,13 +78,20 @@
         position: absolute;
         top: 40%;
         margin-left: 8.75rem;
+        display: block;
+        width: 100%;
 
-        a{
-            text-decoration: none;
-        }
         h6{
             color: $color-secondary;
             font-size: 1rem;
+            @include respond(tab-land){
+                font-size: .8rem;
+            }
+
+            @include respond(tab-port){
+                visibility: hidden;
+            }
+            
         }
 
         h3{
@@ -72,11 +100,42 @@
             span{
                 color: $color-primary;
             }
+
+            @include respond(tab-land){
+                font-size: 1rem;
+            }
+            @include respond(phone){
+                font-size: .75rem;
+            }
         }
         
         h2{
             font-size: 2rem;
             margin-bottom: 1.875rem;
+            
+            @include respond(tab-land){
+                font-size: 1.5rem;
+            }
+            @include respond(phone){
+                font-size: 1rem;
+            }
         }
+        
+        a{
+            text-decoration: none;
+        }
+        
+        @include respond(tab-port){
+            text-align: center;
+            margin: 0 auto;
+        }
+        @include respond(phone){
+            display: block;
+            margin: auto;
+            position: relative;
+        }
+    }
+    @include respond(phone){
+        height: 70vh;
     }
 }

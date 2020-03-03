@@ -4,7 +4,7 @@
 .contact-page{
     @include new-page;
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     background-image: linear-gradient(
         to right bottom,
         rgba(0,0,0,0.8),
@@ -13,11 +13,18 @@
     @include parallax;
     .section-header{
         @include header;
-        h2{color: $color-white};
+        h2{
+            color: $color-white;
+
+            @include respond(tab-land){
+                font-size: 1rem;
+            }
+        }
+
     }
 
     .contact-box{
-        padding: 8.4375rem 0;
+        padding: 3.125rem 0;
         width: 33%;
         display: inline-block;
         color: $color-white;
@@ -26,11 +33,26 @@
         .fas{
             font-size: 2rem;
             color: $color-secondary;
+            
+            @include respond(tab-land){
+                font-size: 1.5rem;
+            }
         }
         h5{
             padding-top: 2.5rem;
             font-size: 1.25rem;
             
+            @include respond(tab-land){
+                font-size: .9rem;
+            }
+        }
+        @include respond(tab-land){
+            p{font-size: .75rem;}
+            padding: 5rem 0;
+        }
+        @include respond(phone){
+            padding: 5rem 0;
+            width: 32%;
         }
     }
 }
